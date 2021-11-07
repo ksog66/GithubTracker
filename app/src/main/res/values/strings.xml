@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">GithubTracker</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="repo_name">Repo Name 1</string>
+    <string name="repo_desc">Lorem Ispum Dor hahahah lfjlsdakjf sdf jsdf</string>
+    <string name="owner_label">Owner/Organization</string>
+    <string name="repo_label">Repo Name</string>
+    <string name="add_repo_btn">ADD</string>
+    <string name="branch_tab">Branches</string>
+    <string name="issues_tab">Issues(0)</string>
+    <string name="sample_date">10 Mar 21</string>
+    <string name="sample_branch_name">a30efa</string>
+    <string name="sample_commit_message">Commit message entered by the user in
+entirety. All of the commit message should be
+displayed</string>
+    <string name="username_sample">Karan Sharma</string>
+</resources>
