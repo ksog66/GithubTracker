@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -31,6 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/sample_commit_message"
+            android:layout_marginTop="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/dateTv" />
@@ -39,6 +42,7 @@
             android:id="@+id/userHolderView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -47,13 +51,16 @@
             <ImageView
                 android:id="@+id/userAvatarIv"
                 android:layout_width="32dp"
-                android:layout_height="32dp" />
+                android:layout_height="32dp"
+                tools:src="@tools:sample/avatars" />
 
             <TextView
                 android:id="@+id/usernameTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/username_sample"/>
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/userAvatarIv"
+                android:text="@string/username_sample" />
         </RelativeLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

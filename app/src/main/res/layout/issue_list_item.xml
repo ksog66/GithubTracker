@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/issueTitleTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sample_commit_message"/>
+
+    <RelativeLayout
+        android:id="@+id/userHolderView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/issueTitleTv">
+
+        <ImageView
+            android:id="@+id/issueCreatorAvatar"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/issueCreatorTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/issueCreatorAvatar"
+            android:text="@string/username_sample" />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

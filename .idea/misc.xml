@@ -7,7 +7,8 @@
         <entry key="app/src/main/res/layout/commits_list_item.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_add_repo.xml" value="0.21" />
         <entry key="app/src/main/res/layout/fragment_details.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.10507246376811594" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/issue_list_item.xml" value="0.21" />
         <entry key="app/src/main/res/layout/repo_list_item.xml" value="0.18" />
       </map>
     </option>

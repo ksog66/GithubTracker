@@ -7,6 +7,7 @@
     <string name="owner_label">Owner/Organization</string>
     <string name="repo_label">Repo Name</string>
     <string name="add_repo_btn">ADD</string>
+    <string name="add_now_btn">Add Now</string>
     <string name="branch_tab">Branches</string>
     <string name="issues_tab">Issues(0)</string>
     <string name="sample_date">10 Mar 21</string>
@@ -15,4 +16,5 @@
 entirety. All of the commit message should be
 displayed</string>
     <string name="username_sample">Karan Sharma</string>
+    <string name="track_your_label">Track Your favorite Repo</string>
 </resources>
