@@ -12,6 +12,7 @@
     <string name="issues_tab">Issues(0)</string>
     <string name="sample_date">10 Mar 21</string>
     <string name="sample_branch_name">a30efa</string>
+    <string name="avatar_desc">Avatar Description </string>
     <string name="sample_commit_message">Commit message entered by the user in
 entirety. All of the commit message should be
 displayed</string>

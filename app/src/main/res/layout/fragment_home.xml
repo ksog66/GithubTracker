@@ -20,6 +20,8 @@
         android:layout_height="wrap_content"
         android:text="@string/track_your_label"
         android:textSize="25sp"
+        android:visibility="invisible"
+        tools:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -30,6 +32,8 @@
         android:layout_height="wrap_content"
         android:text="@string/add_repo_btn"
         android:textSize="20sp"
+        android:visibility="invisible"
+        tools:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/labelTv"/>
