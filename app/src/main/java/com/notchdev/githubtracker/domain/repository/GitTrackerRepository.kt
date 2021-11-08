@@ -1,10 +1,13 @@
 package com.notchdev.githubtracker.domain.repository
 
+import com.notchdev.githubtracker.data.remote.dto.BranchResponse
 import com.notchdev.githubtracker.data.remote.dto.CommitResponse
 import com.notchdev.githubtracker.data.remote.dto.IssueResponse
 import com.notchdev.githubtracker.data.remote.dto.RepositoryResponse
 
 interface GitTrackerRepository {
+
+    suspend fun getRepoBranches(ownerName:String,repoName:String): BranchResponse
 
     suspend fun getRepoDetail(ownerName: String, repoName: String): RepositoryResponse
 

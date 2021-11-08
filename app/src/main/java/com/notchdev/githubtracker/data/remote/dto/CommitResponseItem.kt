@@ -1,6 +1,7 @@
 package com.notchdev.githubtracker.data.remote.dto
 
 
+import com.notchdev.githubtracker.domain.model.CommitDetail
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
@@ -24,4 +25,14 @@ data class CommitResponseItem(
     val sha: String,
     @Json(name = "url")
     val url: String
-)
+) {
+    fun toCommitDetail(): CommitDetail {
+        return CommitDetail(
+            commitDate = commit.author.date,
+            commitMessage = commit.message,
+            committerName = author.login,
+            committerAvatar = author.avatarUrl,
+            commitId = sha.substring(0..8)
+        )
+    }
+}

@@ -4,6 +4,5 @@ data class RepositoryDetail(
     val ownerName:String,
     val repoName:String,
     val repoDesc:String?,
-    val repoLink:String,
-    val branchNames:List<String>
+    val repoLink:String
 )

@@ -1,7 +1,11 @@
 package com.notchdev.githubtracker.data.remote.dto
 
 
-import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
+import com.notchdev.githubtracker.domain.model.BranchDetail
 
-class BranchResponse : ArrayList<BranchResponseItem>()
+class BranchResponse : ArrayList<BranchResponseItem>() {
+
+    fun toBranchDetailList(): List<BranchDetail> {
+        return this.map { it.toBranchDetail() }
+    }
+}

@@ -1,6 +1,7 @@
 package com.notchdev.githubtracker.data.repository
 
 import com.notchdev.githubtracker.data.remote.GithubApi
+import com.notchdev.githubtracker.data.remote.dto.BranchResponse
 import com.notchdev.githubtracker.data.remote.dto.CommitResponse
 import com.notchdev.githubtracker.data.remote.dto.IssueResponse
 import com.notchdev.githubtracker.data.remote.dto.RepositoryResponse
@@ -28,5 +29,9 @@ class GitTrackerRepositoryImpl @Inject constructor(
             repoName,
             branchName
         )
+    }
+
+    override suspend fun getRepoBranches(ownerName: String, repoName: String): BranchResponse {
+        return gitRepoApi.getBranchesOfRepo(ownerName,repoName)
     }
 }

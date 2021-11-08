@@ -1,6 +1,7 @@
 package com.notchdev.githubtracker.data.remote.dto
 
 
+import com.notchdev.githubtracker.domain.model.IssuesDetail
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
@@ -60,4 +61,12 @@ data class IssueResponseItem(
     val url: String,
     @Json(name = "user")
     val user: User
-)
+) {
+    fun toIssuesDetail() : IssuesDetail {
+        return IssuesDetail(
+            issueTitle = title,
+            issueCreatorName = user.login,
+            avatarUrl = user.avatarUrl
+        )
+    }
+}
