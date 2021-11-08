@@ -22,4 +22,6 @@ displayed</string>
     <string name="arg_branch_name">Branch Name</string>
     <string name="arg_repo_name">Repo Name</string>
     <string name="arg_owner_name">Owner Name</string>
+    <string name="browser_view_string">Browser View</string>
+    <string name="delete_repo_string"> Delete Repo</string>
 </resources>

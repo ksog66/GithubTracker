@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.notchdev.githubtracker.presentation.homeFragment.HomeFragment"
-        android:label="fragment_home"
+        android:label="Github Browser"
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_detailsFragment"
@@ -26,7 +26,7 @@
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.notchdev.githubtracker.presentation.detailFragment.DetailsFragment"
-        android:label="fragment_details"
+        android:label="Details"
         tools:layout="@layout/fragment_details">
         <action
             android:id="@+id/action_detailsFragment_to_commitFragment"
@@ -46,11 +46,11 @@
     <fragment
         android:id="@+id/addRepoFragment"
         android:name="com.notchdev.githubtracker.presentation.addRepoFragment.AddRepoFragment"
-        android:label="fragment_add_repo"
+        android:label="Add Repo"
         tools:layout="@layout/fragment_add_repo" />
     <fragment
         android:id="@+id/commitFragment"
         android:name="com.notchdev.githubtracker.presentation.commitsFragment.CommitFragment"
-        android:label="fragment_commit"
+        android:label="Commits"
         tools:layout="@layout/fragment_commit" />
 </navigation>

@@ -1,10 +1,10 @@
 package com.notchdev.githubtracker.presentation.detailFragment
 
 import android.annotation.SuppressLint
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -37,6 +37,10 @@ class DetailsFragment : Fragment() {
     @Inject
     lateinit var issuesAdapter: IssuesAdapter
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -139,6 +143,25 @@ class DetailsFragment : Fragment() {
         }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.details_menu,menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.browser_view -> {
+                val intent = Intent(Intent.ACTION_VIEW)
+                intent.data = Uri.parse(repoDetail!!.repoLink)
+                startActivity(intent)
+            }
+            R.id.delete_repo -> {
+                detailViewModel.deleteRepo(repoDetail!!.id)
+                findNavController().popBackStack()
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

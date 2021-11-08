@@ -7,17 +7,20 @@ import androidx.lifecycle.viewModelScope
 import com.notchdev.githubtracker.common.Resource
 import com.notchdev.githubtracker.domain.model.BranchDetail
 import com.notchdev.githubtracker.domain.model.IssuesDetail
+import com.notchdev.githubtracker.domain.use_case.delete_repo.DeleteRepoUseCase
 import com.notchdev.githubtracker.domain.use_case.get_branches.GetBranchesUseCase
 import com.notchdev.githubtracker.domain.use_case.get_repo_issues.GetRepoIssuesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class DetailsViewModel @Inject constructor(
     private val getBranchesUseCase: GetBranchesUseCase,
-    private val getRepoIssuesUseCase: GetRepoIssuesUseCase
+    private val getRepoIssuesUseCase: GetRepoIssuesUseCase,
+    private val deleteRepoUseCase: DeleteRepoUseCase,
 ):ViewModel() {
 
     private var _branchData = MutableLiveData<List<BranchDetail>?>()
@@ -66,5 +69,9 @@ class DetailsViewModel @Inject constructor(
                 }
             }
         }.launchIn(viewModelScope)
+    }
+
+    fun deleteRepo(id:Int) = viewModelScope.launch{
+        deleteRepoUseCase.deleteRepo(id)
     }
 }

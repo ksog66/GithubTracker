@@ -1,10 +1,9 @@
 package com.notchdev.githubtracker.presentation.homeFragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -14,6 +13,7 @@ import com.notchdev.githubtracker.R
 import com.notchdev.githubtracker.databinding.FragmentHomeBinding
 import com.notchdev.githubtracker.presentation.adapter.RepositoryAdapter
 import com.notchdev.githubtracker.presentation.adapter.RepositoryClickListener
+import com.notchdev.githubtracker.presentation.adapter.ShareClickListener
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -30,6 +30,10 @@ class HomeFragment : Fragment() {
     @Inject
     lateinit var repoAdapter:RepositoryAdapter
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,7 +43,11 @@ class HomeFragment : Fragment() {
         setupRecyclerView()
         homeViewModel.getRepoListFromDB()
         observerUIState()
+        setOnClickListener()
+        return binding.root
+    }
 
+    private fun setOnClickListener() {
         repoAdapter.setOnRepositoryClickListener(RepositoryClickListener{ repoDetail ->
             findNavController().navigate(
                 R.id.action_homeFragment_to_detailsFragment,
@@ -48,7 +56,17 @@ class HomeFragment : Fragment() {
                 )
             )
         })
-        return binding.root
+        repoAdapter.setOnShareClickListener(ShareClickListener {repoName,repoDesc,repoLink->
+            val sendIntent : Intent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT,repoName)
+                putExtra(Intent.EXTRA_TEXT,repoDesc)
+                putExtra(Intent.EXTRA_TEXT,repoLink)
+                type="text/plain"
+            }
+            val shareIntent = Intent.createChooser(sendIntent,null)
+            startActivity(shareIntent)
+        })
     }
 
     private fun setupRecyclerView() {
@@ -87,7 +105,19 @@ class HomeFragment : Fragment() {
         }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.home_menu,menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.add_now) {
+            findNavController().navigate(
+                R.id.action_homeFragment_to_addRepoFragment
+            )
+        }
+        return super.onOptionsItemSelected(item)
+    }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

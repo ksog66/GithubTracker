@@ -12,9 +12,14 @@ import com.notchdev.githubtracker.databinding.RepoListItemBinding
 class RepositoryAdapter : ListAdapter<RepositoryDetail,RepositoryAdapter.RepositoryViewHolder>(RepoDiffCallBack()) {
 
     private var onRepositoryClickListener: RepositoryClickListener? = null
+    private var onShareClickListener: ShareClickListener? = null
 
     fun setOnRepositoryClickListener(listener: RepositoryClickListener) {
         onRepositoryClickListener = listener
+    }
+
+    fun setOnShareClickListener(listener: ShareClickListener) {
+        onShareClickListener = listener
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepositoryViewHolder {
@@ -23,16 +28,19 @@ class RepositoryAdapter : ListAdapter<RepositoryDetail,RepositoryAdapter.Reposit
 
     override fun onBindViewHolder(holder: RepositoryViewHolder, position: Int) {
         val item = getItem(position)
-        holder.bind(item,onRepositoryClickListener)
+        holder.bind(item,onRepositoryClickListener,onShareClickListener)
     }
 
     class RepositoryViewHolder(private val binding:RepoListItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item:RepositoryDetail,onRepositoryClickListener: RepositoryClickListener?) {
+        fun bind(item:RepositoryDetail,onRepositoryClickListener: RepositoryClickListener?,onShareClickListener: ShareClickListener?) {
             binding.repoNameTv.text = item.repoName
             binding.repoDescTv.text = item.repoDesc
             binding.root.setOnClickListener {
                 onRepositoryClickListener?.onClick(item)
+            }
+            binding.shareRepoIv.setOnClickListener {
+                onShareClickListener?.onClick(item.repoName,item.repoDesc,item.repoLink)
             }
         }
         companion object {
@@ -57,4 +65,8 @@ class RepoDiffCallBack: DiffUtil.ItemCallback<RepositoryDetail>() {
 
 class RepositoryClickListener(val listener: (repoDetail: RepositoryDetail) -> Unit) {
     fun onClick(repoDetail:RepositoryDetail) = listener(repoDetail)
+}
+
+class ShareClickListener(val listener: (repoName:String,repoDesc:String,repoLink:String)-> Unit) {
+    fun onClick(repoName: String,repoDesc: String,repoLink: String) = listener(repoName,repoDesc,repoLink)
 }

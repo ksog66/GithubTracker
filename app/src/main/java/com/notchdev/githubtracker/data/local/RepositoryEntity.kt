@@ -12,6 +12,6 @@ data class RepositoryDetail(
     var id:Int = 0,
     var ownerName:String,
     var repoName:String,
-    var repoDesc:String?,
+    var repoDesc:String = " No Description for this Repo",
     var repoLink:String
 ): Parcelable
