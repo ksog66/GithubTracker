@@ -15,7 +15,7 @@ class GetBranchesUseCase @Inject constructor(
     operator fun invoke(ownerName:String,repoName:String): Flow<Resource<List<BranchDetail>>> = flow {
         try {
             emit(Resource.Loading())
-            val branchList = gitTrackerRepository.getRepoBranches(ownerName,repoName).toBranchDetailList()
+            val branchList = gitTrackerRepository.getRepoBranches(ownerName,repoName).map { it.toBranchDetail() }
             emit(Resource.Success(branchList))
         } catch(e: HttpException) {
             emit(Resource.Error<List<BranchDetail>>(e.localizedMessage ?: "Unexpected Error Occured"))

@@ -7,7 +7,7 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class CommitX(
     @Json(name = "author")
-    val author: AuthorX,
+    val author: AuthorX?,
     @Json(name = "comment_count")
     val commentCount: Int,
     @Json(name = "committer")

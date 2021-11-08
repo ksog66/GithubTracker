@@ -1,12 +1,17 @@
 package com.notchdev.githubtracker.data.local
 
+import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.parcelize.Parcelize
 
 @Entity
-data class RepositoryEntity(
+@Parcelize
+data class RepositoryDetail(
     @PrimaryKey(autoGenerate = true)
-    val id:Int = 0,
-    val ownerName:String,
-    val repoName:String
-)
+    var id:Int = 0,
+    var ownerName:String,
+    var repoName:String,
+    var repoDesc:String?,
+    var repoLink:String
+): Parcelable

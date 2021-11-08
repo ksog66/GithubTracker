@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:padding="20dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".presentation.AddRepoFragment.AddRepoFragment">
+    tools:context=".presentation.addRepoFragment.AddRepoFragment">
 
     <TextView
         android:id="@+id/ownerLabel"
@@ -58,4 +58,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ProgressBar
+        android:id="@+id/loadingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="invisible"
+        tools:visibility="visible"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

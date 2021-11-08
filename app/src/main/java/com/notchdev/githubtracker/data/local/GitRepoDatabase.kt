@@ -5,8 +5,9 @@ import androidx.room.RoomDatabase
 
 
 @Database(
-    entities = [RepositoryEntity::class],
-    version = 1
+    entities = [RepositoryDetail::class],
+    version = 1,
+    exportSchema = false
 )
 abstract class GitRepoDatabase : RoomDatabase() {
 

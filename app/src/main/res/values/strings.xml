@@ -9,7 +9,7 @@
     <string name="add_repo_btn">ADD</string>
     <string name="add_now_btn">Add Now</string>
     <string name="branch_tab">Branches</string>
-    <string name="issues_tab">Issues(0)</string>
+    <string name="issues_tab">Issues( %s )</string>
     <string name="sample_date">10 Mar 21</string>
     <string name="sample_branch_name">a30efa</string>
     <string name="avatar_desc">Avatar Description </string>
@@ -18,4 +18,8 @@ entirety. All of the commit message should be
 displayed</string>
     <string name="username_sample">Karan Sharma</string>
     <string name="track_your_label">Track Your favorite Repo</string>
+    <string name="arg_repo_detail">Repo Detail</string>
+    <string name="arg_branch_name">Branch Name</string>
+    <string name="arg_repo_name">Repo Name</string>
+    <string name="arg_owner_name">Owner Name</string>
 </resources>

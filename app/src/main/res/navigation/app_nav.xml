@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.notchdev.githubtracker.presentation.homeFragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment"
+            app:popUpTo="@id/homeFragment">
+            <argument
+                android:name="@string/arg_repo_detail"
+                app:argType="com.notchdev.githubtracker.data.local.RepositoryDetail" />
+        </action>
+        <action
+            android:id="@+id/action_homeFragment_to_addRepoFragment"
+            app:destination="@id/addRepoFragment"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.notchdev.githubtracker.presentation.detailFragment.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details">
+        <action
+            android:id="@+id/action_detailsFragment_to_commitFragment"
+            app:destination="@id/commitFragment"
+            app:popUpTo="@id/detailsFragment">
+            <argument
+                android:name="@string/arg_branch_name"
+                app:argType="string" />
+            <argument
+                android:name="@string/arg_owner_name"
+                app:argType="string"/>
+            <argument
+                android:name="@string/arg_repo_name"
+                app:argType="string"/>
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/addRepoFragment"
+        android:name="com.notchdev.githubtracker.presentation.addRepoFragment.AddRepoFragment"
+        android:label="fragment_add_repo"
+        tools:layout="@layout/fragment_add_repo" />
+    <fragment
+        android:id="@+id/commitFragment"
+        android:name="com.notchdev.githubtracker.presentation.commitsFragment.CommitFragment"
+        android:label="fragment_commit"
+        tools:layout="@layout/fragment_commit" />
+</navigation>

@@ -25,5 +25,5 @@ data class Reactions(
     @Json(name = "+1")
     val x1: Int,
     @Json(name = "-1")
-    val x1: Int
+    val x2: Int
 )

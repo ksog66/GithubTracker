@@ -1,7 +1,8 @@
 package com.notchdev.githubtracker.domain.use_case.get_repo
 
+import android.util.Log
 import com.notchdev.githubtracker.common.Resource
-import com.notchdev.githubtracker.domain.model.RepositoryDetail
+import com.notchdev.githubtracker.data.local.RepositoryDetail
 import com.notchdev.githubtracker.domain.repository.GitTrackerRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -16,6 +17,7 @@ class GetRepoUseCase @Inject constructor(
         try {
             emit(Resource.Loading())
             val repositoryDetail = gitTrackerRepository.getRepoDetail(ownerName,repoName).toRepositoryDetail()
+            Log.d("UseCase", "invoke: $repositoryDetail ")
             emit(Resource.Success(repositoryDetail))
         } catch( e:HttpException) {
             emit(Resource.Error<RepositoryDetail>(e.localizedMessage ?: "Unexpected Error Occurred"))

@@ -15,7 +15,7 @@ class GetCommitsUseCase @Inject constructor(
     operator fun invoke(ownerName:String,repoName:String,branchName:String): Flow<Resource<List<CommitDetail>>> = flow {
         try {
             emit(Resource.Loading())
-            val commitList = gitTrackerRepository.getRepoCommits(ownerName,repoName,branchName).toCommitDetailList()
+            val commitList = gitTrackerRepository.getRepoCommits(ownerName,repoName,branchName).map { it.toCommitDetail() }
             emit(Resource.Success(commitList))
         } catch (e: HttpException) {
             emit(Resource.Error<List<CommitDetail>>(e.localizedMessage ?: "Unexpected Error Occured"))
