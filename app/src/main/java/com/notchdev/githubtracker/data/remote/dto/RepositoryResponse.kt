@@ -8,171 +8,171 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class RepositoryResponse(
     @Json(name = "allow_forking")
-    val allowForking: Boolean,
+    val allowForking: Boolean?,
     @Json(name = "archive_url")
-    val archiveUrl: String,
+    val archiveUrl: String?,
     @Json(name = "archived")
-    val archived: Boolean,
+    val archived: Boolean?,
     @Json(name = "assignees_url")
-    val assigneesUrl: String,
+    val assigneesUrl: String?,
     @Json(name = "blobs_url")
-    val blobsUrl: String,
+    val blobsUrl: String?,
     @Json(name = "branches_url")
-    val branchesUrl: String,
+    val branchesUrl: String?,
     @Json(name = "clone_url")
-    val cloneUrl: String,
+    val cloneUrl: String?,
     @Json(name = "collaborators_url")
-    val collaboratorsUrl: String,
+    val collaboratorsUrl: String?,
     @Json(name = "comments_url")
-    val commentsUrl: String,
+    val commentsUrl: String?,
     @Json(name = "commits_url")
-    val commitsUrl: String,
+    val commitsUrl: String?,
     @Json(name = "compare_url")
-    val compareUrl: String,
+    val compareUrl: String?,
     @Json(name = "contents_url")
-    val contentsUrl: String,
+    val contentsUrl: String?,
     @Json(name = "contributors_url")
-    val contributorsUrl: String,
+    val contributorsUrl: String?,
     @Json(name = "created_at")
-    val createdAt: String,
+    val createdAt: String?,
     @Json(name = "default_branch")
-    val defaultBranch: String,
+    val defaultBranch: String?,
     @Json(name = "deployments_url")
-    val deploymentsUrl: String,
+    val deploymentsUrl: String?,
     @Json(name = "description")
-    val description: String,
+    val description: String?,
     @Json(name = "disabled")
-    val disabled: Boolean,
+    val disabled: Boolean?,
     @Json(name = "downloads_url")
-    val downloadsUrl: String,
+    val downloadsUrl: String?,
     @Json(name = "events_url")
-    val eventsUrl: String,
+    val eventsUrl: String?,
     @Json(name = "fork")
-    val fork: Boolean,
+    val fork: Boolean?,
     @Json(name = "forks")
-    val forks: Int,
+    val forks: Int?,
     @Json(name = "forks_count")
-    val forksCount: Int,
+    val forksCount: Int?,
     @Json(name = "forks_url")
-    val forksUrl: String,
+    val forksUrl: String?,
     @Json(name = "full_name")
     val fullName: String,
     @Json(name = "git_commits_url")
-    val gitCommitsUrl: String,
+    val gitCommitsUrl: String?,
     @Json(name = "git_refs_url")
-    val gitRefsUrl: String,
+    val gitRefsUrl: String?,
     @Json(name = "git_tags_url")
-    val gitTagsUrl: String,
+    val gitTagsUrl: String?,
     @Json(name = "git_url")
-    val gitUrl: String,
+    val gitUrl: String?,
     @Json(name = "has_downloads")
-    val hasDownloads: Boolean,
+    val hasDownloads: Boolean?,
     @Json(name = "has_issues")
-    val hasIssues: Boolean,
+    val hasIssues: Boolean?,
     @Json(name = "has_pages")
-    val hasPages: Boolean,
+    val hasPages: Boolean?,
     @Json(name = "has_projects")
-    val hasProjects: Boolean,
+    val hasProjects: Boolean?,
     @Json(name = "has_wiki")
-    val hasWiki: Boolean,
+    val hasWiki: Boolean?,
     @Json(name = "homepage")
-    val homepage: String,
+    val homepage: String?,
     @Json(name = "hooks_url")
-    val hooksUrl: String,
+    val hooksUrl: String?,
     @Json(name = "html_url")
     val htmlUrl: String,
     @Json(name = "id")
-    val id: Int,
+    val id: Int?,
     @Json(name = "is_template")
-    val isTemplate: Boolean,
+    val isTemplate: Boolean?,
     @Json(name = "issue_comment_url")
-    val issueCommentUrl: String,
+    val issueCommentUrl: String?,
     @Json(name = "issue_events_url")
-    val issueEventsUrl: String,
+    val issueEventsUrl: String?,
     @Json(name = "issues_url")
-    val issuesUrl: String,
+    val issuesUrl: String?,
     @Json(name = "keys_url")
-    val keysUrl: String,
+    val keysUrl: String?,
     @Json(name = "labels_url")
-    val labelsUrl: String,
+    val labelsUrl: String?,
     @Json(name = "language")
-    val language: String,
+    val language: String?,
     @Json(name = "languages_url")
-    val languagesUrl: String,
+    val languagesUrl: String?,
     @Json(name = "license")
-    val license: License,
+    val license: License?,
     @Json(name = "merges_url")
-    val mergesUrl: String,
+    val mergesUrl: String?,
     @Json(name = "milestones_url")
-    val milestonesUrl: String,
+    val milestonesUrl: String?,
     @Json(name = "mirror_url")
     val mirrorUrl: Any?,
     @Json(name = "name")
     val name: String,
     @Json(name = "network_count")
-    val networkCount: Int,
+    val networkCount: Int?,
     @Json(name = "node_id")
-    val nodeId: String,
+    val nodeId: String?,
     @Json(name = "notifications_url")
-    val notificationsUrl: String,
+    val notificationsUrl: String?,
     @Json(name = "open_issues")
-    val openIssues: Int,
+    val openIssues: Int?,
     @Json(name = "open_issues_count")
-    val openIssuesCount: Int,
+    val openIssuesCount: Int?,
     @Json(name = "owner")
     val owner: Owner,
     @Json(name = "private")
-    val `private`: Boolean,
+    val `private`: Boolean?,
     @Json(name = "pulls_url")
-    val pullsUrl: String,
+    val pullsUrl: String?,
     @Json(name = "pushed_at")
-    val pushedAt: String,
+    val pushedAt: String?,
     @Json(name = "releases_url")
-    val releasesUrl: String,
+    val releasesUrl: String?,
     @Json(name = "size")
-    val size: Int,
+    val size: Int?,
     @Json(name = "ssh_url")
-    val sshUrl: String,
+    val sshUrl: String?,
     @Json(name = "stargazers_count")
-    val stargazersCount: Int,
+    val stargazersCount: Int?,
     @Json(name = "stargazers_url")
-    val stargazersUrl: String,
+    val stargazersUrl: String?,
     @Json(name = "statuses_url")
-    val statusesUrl: String,
+    val statusesUrl: String?,
     @Json(name = "subscribers_count")
-    val subscribersCount: Int,
+    val subscribersCount: Int?,
     @Json(name = "subscribers_url")
-    val subscribersUrl: String,
+    val subscribersUrl: String?,
     @Json(name = "subscription_url")
-    val subscriptionUrl: String,
+    val subscriptionUrl: String?,
     @Json(name = "svn_url")
-    val svnUrl: String,
+    val svnUrl: String?,
     @Json(name = "tags_url")
-    val tagsUrl: String,
+    val tagsUrl: String?,
     @Json(name = "teams_url")
-    val teamsUrl: String,
+    val teamsUrl: String?,
     @Json(name = "temp_clone_token")
     val tempCloneToken: Any?,
     @Json(name = "topics")
-    val topics: List<String>,
+    val topics: List<String>?,
     @Json(name = "trees_url")
-    val treesUrl: String,
+    val treesUrl: String?,
     @Json(name = "updated_at")
-    val updatedAt: String,
+    val updatedAt: String?,
     @Json(name = "url")
-    val url: String,
+    val url: String?,
     @Json(name = "visibility")
-    val visibility: String,
+    val visibility: String?,
     @Json(name = "watchers")
-    val watchers: Int,
+    val watchers: Int?,
     @Json(name = "watchers_count")
-    val watchersCount: Int
+    val watchersCount: Int?
 ) {
     fun toRepositoryDetail(): RepositoryDetail {
         return RepositoryDetail(
             ownerName = owner.login,
             repoName = name,
-            repoDesc = description,
+            repoDesc = description ?: "There is no Description for this repo",
             repoLink = htmlUrl
         )
     }
