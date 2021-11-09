@@ -24,4 +24,5 @@ displayed</string>
     <string name="arg_owner_name">Owner Name</string>
     <string name="browser_view_string">Browser View</string>
     <string name="delete_repo_string"> Delete Repo</string>
+    <string name="no_issues_text">No Issues Here In this Repository</string>
 </resources>

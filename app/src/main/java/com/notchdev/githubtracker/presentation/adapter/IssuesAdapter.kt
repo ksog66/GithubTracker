@@ -26,7 +26,7 @@ class IssuesAdapter: ListAdapter<IssuesDetail,IssuesAdapter.IssuesViewHolder>(Is
             binding.apply {
                 issueTitleTv.text = item.issueTitle
                 issueCreatorTv.text = item.issueCreatorName
-                issueCreatorAvatar.loadImage(item.avatarUrl)
+                issueCreatorAvatar.loadImage(item.avatarUrl,circleCrop = true)
             }
         }
         companion object {

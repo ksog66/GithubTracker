@@ -44,7 +44,7 @@ class DetailsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentDetailsBinding.inflate(layoutInflater, container, false)
 
         arguments?.let {
@@ -80,6 +80,13 @@ class DetailsFragment : Fragment() {
 
     @SuppressLint("StringFormatMatches")
     private fun observeUIStates() {
+        detailViewModel.isLoading.observe({lifecycle}) {
+            if(it) {
+                binding.loadinProgressBar.visibility = View.VISIBLE
+            } else {
+                binding.loadinProgressBar.visibility = View.INVISIBLE
+            }
+        }
         detailViewModel.branchData.observe({lifecycle}) {
             it?.let {
                 branchAdapter.submitList(it)

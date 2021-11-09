@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.notchdev.githubtracker.common.loadImage
+import com.notchdev.githubtracker.common.timeStamp
 import com.notchdev.githubtracker.databinding.CommitsListItemBinding
 import com.notchdev.githubtracker.domain.model.CommitDetail
 
@@ -26,9 +27,9 @@ class CommitAdapter: ListAdapter<CommitDetail,CommitAdapter.CommitViewHolder>(Co
             binding.apply {
                 commitMessageTv.text = item.commitMessage
                 branchIdTv.text = item.commitId
-                dateTv.text = item.commitDate
-                usernameTv.text = item.committerAvatar
-                userAvatarIv.loadImage(item.committerAvatar)
+                dateTv.timeStamp = item.commitDate
+                usernameTv.text = item.committerName
+                userAvatarIv.loadImage(item.committerAvatar,circleCrop = true)
             }
         }
         companion object {
@@ -41,7 +42,7 @@ class CommitAdapter: ListAdapter<CommitDetail,CommitAdapter.CommitViewHolder>(Co
     }
 }
 
-class CommitDiffCallBack(): DiffUtil.ItemCallback<CommitDetail>() {
+class CommitDiffCallBack: DiffUtil.ItemCallback<CommitDetail>() {
     override fun areItemsTheSame(oldItem: CommitDetail, newItem: CommitDetail): Boolean {
         return oldItem.commitDate == newItem.commitDate
     }

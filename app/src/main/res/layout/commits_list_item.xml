@@ -5,31 +5,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:elevation="15dp"
-    android:layout_margin="15dp">
+    android:elevation="5dp"
+    android:layout_marginVertical="15dp"
+    android:layout_marginHorizontal="5dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:padding="5dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@drawable/layout_border">
 
-        <TextView
-            android:id="@+id/dateTv"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:id="@+id/dateAndIdLayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/sample_date"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toStartOf="@+id/branchIdTv"
-            app:layout_constraintHorizontal_bias="0.0"
+            android:background="@drawable/layout_border"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/branchIdTv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/sample_branch_name"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/dateTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sample_date"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/branchIdTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sample_branch_name"
+                android:layout_alignParentEnd="true"/>
+        </RelativeLayout>
 
         <TextView
             android:id="@+id/commitMessageTv"
@@ -39,16 +47,18 @@
             app:flow_horizontalAlign="start"
             android:textColor="@color/black"
             android:text="@string/sample_commit_message"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="3dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dateTv" />
+            app:layout_constraintTop_toBottomOf="@+id/dateAndIdLayout" />
 
         <RelativeLayout
             android:id="@+id/userHolderView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="5dp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintHorizontal_bias="0"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -66,6 +76,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
+                android:layout_centerInParent="true"
                 android:layout_toEndOf="@+id/userAvatarIv"
                 android:text="@string/username_sample" />
         </RelativeLayout>
